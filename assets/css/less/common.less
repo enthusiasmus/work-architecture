@@ -1,0 +1,134 @@
+/** Common Mixins for Common effects */
+
+//Standard Vars and Funcs for shorter writing
+.basic-border (@color: #000, @width: 1px, @style: solid) {
+	border:	@width @style @color;
+}
+
+
+.notextselection {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.stupidBlock {
+	.notextselection();
+	cursor: default;
+}
+
+//Makes width 100% respect the inner border (like padding)
+.boxsizingBorder {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+
+// Border Radius
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.border-radius2tp (@top: 5px, @bottom: 5px) {
+	-webkit-border-radius: @top @top @bottom @bottom;
+	-moz-border-radius: @top @top @bottom @bottom;
+	border-radius: @top @top @bottom @bottom;
+}
+
+.border-radius2lr (@left: 5px, @right: 5px) {
+	-webkit-border-radius: @left @right @right @left;
+	-moz-border-radius: @left @right @right @left;
+	border-radius: @left @right @right @left;
+}
+
+
+.border-radius4 (@topleft: 5px, @topright: 5px, @bottomright: 5px, @bottomleft: 5px) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+	border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+
+// Transitions
+
+.transition (@prop: all, @time: 1s, @ease: ease-in-out) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition: @prop @time @ease;
+	-o-transition: @prop @time @ease;
+	-ms-transition: @prop @time @ease;
+	transition: @prop @time @ease;
+}
+
+// Opacity
+.opacity (@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+
+// Gradients
+
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+	
+	background: mix(@start, @stop, 50%); /* Old browsers */
+	background: -moz-linear-gradient(@origin,  @start 0%, @stop 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(@origin,  @start 0%,@stop 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(@origin,  @start 0%,@stop 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(@origin,  @start 0%,@stop 100%); /* IE10+ */
+	background: linear-gradient(@origin,  @start 0%,@stop 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@stop',GradientType=0 ); /* IE6-9 */
+}
+
+.gradient2 (@origin: left, @start: #ffffff, @from: 0%, @stop: #000000, @to: 100%) {
+	
+	background: mix(@start, @stop, 50%); /* Old browsers */
+	background: -moz-linear-gradient(@origin,  @start @from, @stop @to); /* FF3.6+ */
+	background: -webkit-linear-gradient(@origin,  @start @from,@stop @to); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(@origin,  @start @from,@stop @to); /* Opera 11.10+ */
+	background: -ms-linear-gradient(@origin,  @start @from,@stop @to); /* IE10+ */
+	background: linear-gradient(@origin,  @start @from,@stop @to); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@stop',GradientType=0 ); /* IE6-9 */
+}
+
+
+.gradient3 (@origin: left, @p1-color: #ffffff, @p1: 0%, @p2-color: #999999, @p2: 50%, @p3-color: #ffffff, @p3: 100%) {
+	background: mix(@p1-color, @p3-color, 50%); /* Old browsers */
+	background: -moz-linear-gradient(@origin,  @p1-color @p1, @p2-color @p2, @p3-color @p3); /* FF3.6+ */
+	background: -webkit-linear-gradient(@origin,  @p1-color @p1, @p2-color @p2, @p3-color @p3); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(@origin,  @p1-color @p1, @p2-color @p2, @p3-color @p3); /* Opera 11.10+ */
+	background: -ms-linear-gradient(@origin,  @p1-color @p1, @p2-color @p2, @p3-color @p3); /* IE10+ */
+	background: linear-gradient(@origin,  @p1-color @p1, @p2-color @p2, @p3-color @p3); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@p1-color', endColorstr='@p3-color',GradientType=0 ); /* IE6-9 */
+}
+
+//Box Shadow
+
+
+.box-shadow(@shadows-string) {
+	/*offset offset (blur (spread)) color*/
+	-moz-box-shadow:	@shadows-string;
+	-webkit-box-shadow: @shadows-string;
+	box-shadow: 		@shadows-string;
+}
+
+
+//Force element to selfclear its children http://css-tricks.com/snippets/css/clear-fix/
+//Warning: Occupies :after element!
+.clearfix(){
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}
+
+//Read more at http://designshack.net/articles/css/10-less-css-examples-you-should-steal-for-your-projects/#CBMVPqcBTjYtSXxZ.99
