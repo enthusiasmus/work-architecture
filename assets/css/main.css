@@ -152,6 +152,7 @@ body a:hover {
   line-height: 100px;
   font-size: 50px;
   font-family: 'rotissemisansregular';
+  cursor: default;
 }
 #navigation {
   float: left;
