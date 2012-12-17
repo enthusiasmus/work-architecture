@@ -35,17 +35,15 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-html,
-body {
+html, body {
   padding: 0;
   margin: 0;
   background: #ffffff;
   color: #000000;
   font-family: Arial, sans-serif;
 }
-html a,
-body a {
-  text-decoration: none;
+html a, body a {
+  text-decoration: underline;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -53,14 +51,14 @@ body a {
   transition: all 0.2s ease-in-out;
   color: inherit;
 }
-html a:hover,
-body a:hover {
+html a:hover, body a:hover {
   color: #b3b3b3;
 }
 #content {
   width: 100%;
   float: left;
   min-height: 300px;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
 }
 #content:after {
   content: "";
@@ -82,11 +80,8 @@ body a:hover {
   width: 50%;
   float: left;
 }
-#content .feed.half.left {
-  border-right: 1px solid rgba(0, 0, 0, 0.3);
-}
 #content .feed.half.right {
-  border-left: 1px solid rgba(200, 200, 200, 0.5);
+  border-left: 1px solid rgba(150, 150, 150, 0.5);
 }
 #content .feed > li {
   width: 100%;
@@ -98,39 +93,40 @@ body a:hover {
   box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
 }
+
+#content .feed > li:last-child{
+  border:none;
+}
+
 #content .feed > li:after {
   content: "";
   display: table;
   clear: both;
 }
-#content .feed > li + li {
-  border-top: 1px solid rgba(200, 200, 200, 0.5);
-}
 #content .feed > li header {
   display: inline-block;
   font-size: 1.1em;
+  width:100%;
 }
 #content .feed > li time {
+  width:100%;
   display: block;
-  position: absolute;
-  top: 8px;
-  right: 13px;
   font-size: 0.6em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.5);
-  padding: 2px;
 }
 #content .feed > li img {
   float: left;
-  margin-right: 3px;
+  margin: 8px 10px 10px 0px;
+  max-width:470px;
 }
 #content .feed > li p {
-  margin: 5px 0px;
+  margin: 8px 0px;
   font-size: 0.8em;
 }
 #wrapper {
@@ -140,7 +136,14 @@ body a:hover {
 #header {
   float: left;
   width: 100%;
-  height: 150px;
+  height: 165px;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
+}
+#header a {
+  text-decoration: none;
+}
+#header a:hover {
+  color:#000;
 }
 #header h1 {
   -webkit-box-sizing: border-box;
@@ -172,14 +175,39 @@ body a:hover {
   vertical-align: middle;
   float: left;
   text-align: center;
+  background: #000;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-#navigation a {
+#navigation ul li:hover {
+  background: #FFF;
+}
+#navigation ul li a {
   font-size: 14px;
   font-weight: bold;
+  color: #FFF;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
+#navigation ul li:hover a {
+  color: #000;
+}
+#navigation ul li:hover a:hover {
+  color: #000;
+}
+
 #footer {
   float: left;
   width: 100%;
-  height: 100px;
-  background: #666666;
+  height: 50px;
+  background: #FFF;
+  font-size: 0.6em;
+  margin-top:20px;
+  text-align:center;
 }
