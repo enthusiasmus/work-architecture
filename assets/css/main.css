@@ -42,7 +42,7 @@ html, body {
   color: #000000;
   font-family: Arial, sans-serif;
 }
-html a, body a {
+html a:link, html a:visited {
   text-decoration: underline;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -51,8 +51,11 @@ html a, body a {
   transition: all 0.3s ease-in-out;
   color: #000;
 }
-html a:hover, body a:hover {
+html a:hover, html a:active {
   color: #999;
+}
+img {
+  border: none;
 }
 #content {
   width: 100%;
@@ -83,13 +86,27 @@ html a:hover, body a:hover {
 #content.details .feed.half {
   width: 42%;
   float: left;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  -ms-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
 #content.projects .feed.half {
   width: 50%;
   float: left;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  -ms-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 #content .feed.half.right {
   border-left: 1px solid rgba(150, 150, 150, 0.5);
+}
+#content .feed.half.left {
+  border-right: 1px solid rgba(150, 150, 150, 0.5);
+  margin-right: -1px;
 }
 #content .feed > li {
   width: 100%;
@@ -183,7 +200,7 @@ html a:hover, body a:hover {
 #header a {
   text-decoration: none;
 }
-#header a:hover {
+#header a:hover, #header a:active {
   color: #000;
 }
 #header h1 {
@@ -223,10 +240,10 @@ html a:hover, body a:hover {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-#navigation ul li:hover {
+#navigation ul li:hover, #navigation ul li:active {
   background: #FFF;
 }
-#navigation ul li a {
+#navigation ul li a:link, #navigation ul li a:visited {
   font-size: 14px;
   font-weight: bold;
   color: #FFF;
@@ -236,10 +253,10 @@ html a:hover, body a:hover {
   -ms-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-#navigation ul li:hover a {
+#navigation ul li:hover a:link, #navigation ul li:hover a:visited {
   color: #000;
 }
-#navigation ul li:hover a:hover {
+#navigation ul li:hover a:hover, #navigation ul li:hover a:active {
   color: #000;
 }
 
@@ -257,7 +274,6 @@ html a:hover, body a:hover {
   #wrapper {
     width: 512px;
   }
-
   #content.projects .feed.half {
     width: 100%;
   }
@@ -267,9 +283,14 @@ html a:hover, body a:hover {
   #content.projects .feed.half.left > li:last-child {
     border-bottom: 1px solid rgba(150, 150, 150, 0.5);
   }
+  #content.projects .feed.half.left {
+    border-right: none;
+    margin-right: 0px;
+  }
 
   #content.details .feed.half.left {
     margin-bottom: 0px;
+    border-right: none;
   }
   #content.details .feed.half.right {
     margin-top: 0px;
@@ -280,7 +301,6 @@ html a:hover, body a:hover {
   #content.details .feed.half.right li {
     padding-top: 0px;
   }
-
   #content.details .feed.half {
     width: 100%;
   }
