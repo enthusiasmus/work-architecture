@@ -73,69 +73,87 @@ img {
   display: table;
   clear: both;
 }
+
 #content .feed {
-  display: block;
+  overflow: hidden;
   margin: 5px 0px;
-  padding: 0 15px;
+  padding: 0;
+    width: 100%;
   list-style: none;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#content.details .feed.half {
-  width: 42%;
-  float: left;
   -webkit-transition: width 0.5s ease-in-out;
   -moz-transition: width 0.5s ease-in-out;
   -o-transition: width 0.5s ease-in-out;
   -ms-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
-}
-#content.projects .feed.half {
-  width: 50%;
-  float: left;
-  -webkit-transition: width 1s ease-in-out;
-  -moz-transition: width 1s ease-in-out;
-  -o-transition: width 1s ease-in-out;
-  -ms-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
-}
-#content .feed.half.right {
-  border-left: 1px solid rgba(150, 150, 150, 0.5);
-}
-#content .feed.half.left {
-  border-right: 1px solid rgba(150, 150, 150, 0.5);
-  margin-right: -1px;
-}
-#content .feed > li {
-  width: 100%;
-  margin: 0;
-  padding: 10px 5px 10px 5px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  position: relative;
+}
+
+#content .details.feed {
+  width: 42%;
+}
+#content .projects.feed {
+  width: 50%;
+}
+/*#content .feed.half.right{
+ border-left: 1px solid rgba(150, 150, 150, 0.5);
+ padding: 0 0 0 15px;
+ }
+ #content .feed.half.left{
+ border-right: 1px solid rgba(150, 150, 150, 0.5);
+ margin-right: -1px;
+ padding: 0 15px 0 0;
+ }*/
+#content .feed > li {
+  width: 50%;
+  float: left;
+  display: inline;
+  margin: 0;
+  padding: 10px 0px 10px 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
   overflow-x: hidden;
   border-bottom: 1px solid rgba(150, 150, 150, 0.5);
 }
 
 #content .feed > li:last-child {
-  border: none;
+  border-bottom: none;
 }
 
-#content .feed > li:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+/*#content .feed > li:after {
+ content: "";
+ display: table;
+ clear: both;
+ }*/
+
 #content .feed > li header {
   display: inline-block;
   font-size: 1.1em;
   width: 100%;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+}
+
+#content .feed > li time {
+  width: 100%;
+  display: block;
+  font-size: 0.6em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#content .feed > li img {
+  float: left;
+  margin: 8px 10px 10px 0px;
+  max-width: 100%;
+}
+#content .feed > li p {
+  margin: 8px 0px 3px 0px;
+  font-size: 0.8em;
 }
 
 #content #site-menu {
@@ -162,6 +180,7 @@ img {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
 #content #site-menu h4 {
   padding: 0px;
   margin: 5px 0px 5px 0px;
@@ -169,24 +188,6 @@ img {
   font-weight: bold;
 }
 
-#content .feed > li time {
-  width: 100%;
-  display: block;
-  font-size: 0.6em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#content .feed > li img {
-  float: left;
-  margin: 8px 10px 10px 0px;
-  max-width: 100%;
-}
-#content .feed > li p {
-  margin: 8px 0px 3px 0px;
-  font-size: 0.8em;
-}
 #wrapper {
   width: 1024px;
   margin: 0px auto;
@@ -194,10 +195,10 @@ img {
 #header {
   float: left;
   width: 100%;
-  height: 165px;
+  height: 155px;
   border-bottom: 1px solid rgba(150, 150, 150, 0.5);
   position: fixed;
-  z-index:99;
+  z-index: 99;
   margin: 0px auto;
   width: 1024px;
   background: url("../img/cream_dust.png") #ffffff;
@@ -216,7 +217,7 @@ img {
   margin: 0px;
   height: 100px;
   line-height: 100px;
-  font-size: 50px;
+  font-size: 48px;
   font-family: 'rotissemisansregular';
   cursor: default;
 }
@@ -275,7 +276,7 @@ img {
 }
 
 @media (max-width: 800px) {
-  #wrapper {
+  #wrapper, #header {
     width: 512px;
   }
   #content.projects .feed.half {
@@ -283,6 +284,10 @@ img {
   }
   #content.projects .feed.half.right {
     border-left: none;
+    padding: 0 0 0 0;
+  }
+  #content .feed.half.left, #content .feed.half.right {
+    padding: 0px;
   }
   #content.projects .feed.half.left > li:last-child {
     border-bottom: 1px solid rgba(150, 150, 150, 0.5);
@@ -318,3 +323,4 @@ img {
     display: none;
   }
 }
+
