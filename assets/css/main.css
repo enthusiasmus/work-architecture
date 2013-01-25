@@ -11,30 +11,6 @@
 #typo .read {
   font-family: Arial, sans-serif;
 }
-/** Common Mixins for Common effects */
-.notextselection {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.stupidBlock {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: default;
-}
-.boxsizingBorder {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
 html, body {
   padding: 0;
   margin: 0;
@@ -63,11 +39,11 @@ img {
   float: left;
   min-height: 300px;
   border-bottom: 1px solid rgba(210, 210, 210, 1);
-  font-size:12px;
+  font-size: 12px;
 }
 #content h2 {
   font-size: 17px;
-  margin:0;
+  margin: 0;
 }
 #content:after {
   content: "";
@@ -103,14 +79,14 @@ img {
   border-bottom: 1px solid rgba(210, 210, 210, 1);
 }
 
-#content #feed li:first-child, #content #feed li:nth-child(2){
-  padding-top:0;
+#content #feed li:first-child, #content #feed li:nth-child(2) {
+  padding-top: 0;
 }
 
 #content #feed > li header {
   display: inline-block;
   font-size: 16px;
-  font-weight:bold;
+  font-weight: bold;
   width: 100%;
   margin-bottom: 4px;
 }
@@ -160,9 +136,9 @@ img {
   margin-left: -1px;
 }
 
-.details .half.right p{
-  margin-top:0;
-  padding-top:0;
+.details .half.right p {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .details #site-menu {
@@ -170,7 +146,6 @@ img {
   float: left;
   margin: -21px 0px 15px 41px;
   padding: 0;
-  
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -182,11 +157,11 @@ img {
 .details #site-menu img {
   width: 100%;
   float: left;
-  display:block;
+  display: block;
 }
 
 .details #site-menu a {
-  float:left;
+  float: left;
 }
 
 .details #site-menu > li {
@@ -201,11 +176,11 @@ img {
 }
 
 .details #site-menu h4 {
-  float:left;
+  float: left;
   padding: 0px;
   margin: 5px 0px 5px 0px;
   font-size: 12px;
-  font-weight:normal;
+  font-weight: normal;
 }
 
 #wrapper {
